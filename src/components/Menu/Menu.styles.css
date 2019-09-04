@@ -1,0 +1,47 @@
+body {
+    --primary: #0facf3;
+    --primary-dark: #10a5e8;
+    --sidebar-bg: #edf0f2;
+    --plain: #fff;
+    --secondary-hover: #e9e4e4;
+    --text-color: #333;
+    --background-color: #f1f1f1;
+    --background-light-color: #fcfcfc;
+    --muted-color: #999595;
+    margin: 0
+}
+
+
+
+
+
+nav {
+    flex: 0 0 auto;
+    width: 300px;
+    background: var(--sidebar-bg);
+    padding: 1rem;
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+        0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.nav h5 {
+    font-size: 12px;
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+
+
+.logo {
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+
