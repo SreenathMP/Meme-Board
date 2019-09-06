@@ -17,3 +17,13 @@
 
 
 }
+
+.design-frame {
+	box-sizing: border-box;
+}
+
+.design-frame {
+	max-width: 1000px;
+	max-height: 420px;
+	
+}

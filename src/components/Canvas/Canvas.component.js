@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 import "./Canvas.styles.css";
 import SettingsContext from "../../contexts/settings.context";
+import Heading from './Heading.component';
+import DraggableComponent from "./Draggable.component";
 
 class Canvas extends Component {
-
- 
-  
   state = {};
 
   render() {
-    
     return (
       <div className="content">
         <div className="center">
-          <div
+
+          <div className="design-frame"
             style={{
               width: this.context.width,
               height: this.context.height,
@@ -21,12 +20,13 @@ class Canvas extends Component {
               background: this.context.background
             }}
             ref="canvas"
-           >
-             <div contentEditable>jjjdj</div>
-           </div>
-           
-          
-          
+          >
+            <div className="capture">
+            <DraggableComponent>
+            <Heading style={{padding:"10px",display:"block"}}/>
+            </DraggableComponent>
+            </div>
+          </div>
         </div>
       </div>
     );
