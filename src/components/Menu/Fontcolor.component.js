@@ -3,10 +3,10 @@ import { TwitterPicker } from "react-color";
 import reactCSS from "reactcss";
 import SettingsContext from "../../contexts/settings.context";
 
-class Colorpicker extends Component {
+class Fontcolor extends Component {
   state = {
     displayColorPicker: false,
-    color: this.context.background1
+    color: this.context.fontcolor1
   };
 
   componentDidMount(){
@@ -14,14 +14,13 @@ class Colorpicker extends Component {
 
    if(node === "menu1"){
      this.setState({
-       color:this.context.background1
-       
+       color:this.context.fontcolor1
      })
    }
 
    if(node === "menu2"){
     this.setState({
-      color:this.context.background2
+      color:this.context.fontcolor2
     })
   }
   }
@@ -41,12 +40,12 @@ class Colorpicker extends Component {
     if( node === "menu1"){
       
       this.setState({ color: color.hex });
-      this.context.setbackground1(color.hex);
+      this.context.setfontcolor1(this.state.color);
       }
 
     if(node === "menu2"){
     this.setState({ color: color.hex });
-    this.context.setbackground2(color.hex);
+    this.context.setfontcolor2(parseInt(this.state.color));
     }
   };
 
@@ -103,5 +102,5 @@ class Colorpicker extends Component {
   }
 }
 
-export default Colorpicker;
-Colorpicker.contextType = SettingsContext;
+export default Fontcolor;
+Fontcolor.contextType = SettingsContext;

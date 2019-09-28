@@ -3,40 +3,61 @@ import React, { Component } from "react";
 import "./Menu.styles.css";
 import MenuItems from "./MenuItems.component";
 
+import { Toggle } from "react-powerplug";
+import { Plus, Minus, Settings,Feather } from 'react-feather';
+import Properties from "./Properties.component";
+
+
 class Menu extends Component {
   state = {};
 
-  
-
-  
-
   render() {
     return (
-     
-          <nav role="navigation">
-            <h2 className="logo">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                <polyline points="21 15 16 10 5 21"></polyline>
-              </svg>
-              <span>Memes</span>
-            </h2>
-            <h4>Properties</h4>
-            <MenuItems />
-          </nav>
-         
-       
+      <nav role="navigation">
+        <h2 className="logo">
+          <Feather size="25" />
+          <span>Memes</span>
+        </h2>
+        <Toggle initial={true}>
+          {({ on, toggle }) => (
+            <>
+              <div className="toggle" onClick={toggle} checked={on}>
+              <h5>
+							{on ? <Minus size="12" /> : <Plus size="12" />} <Settings size="12" /> properties
+						</h5>
+              </div>
+
+              {on && <div className="menu1" id="canvas"><Properties /></div>}
+            </>
+          )}
+        </Toggle>
+        <Toggle initial={false}>
+          {({ on, toggle }) => (
+            <>
+              <div className="toggle" onClick={toggle} checked={on}>
+              <h5>
+							{on ? <Minus size="12" /> : <Plus size="12" />} <Settings size="12" /> canvas one
+						</h5>
+              </div>
+
+              {on && <div className="menu1" id="canvas"><MenuItems /></div>}
+            </>
+          )}
+        </Toggle>
+        <Toggle initial={false}>
+          {({ on, toggle }) => (
+            <>
+              <div className="toggle" onClick={toggle} checked={on}>
+              <h5>
+							{on ? <Minus size="12" /> : <Plus size="12" />} <Settings size="12" /> canvas two
+						</h5>
+              </div>
+
+              {on && <div className="menu2" id="canvas"><MenuItems /> </div>}
+            </>
+          )}
+        </Toggle>
+      </nav>
     );
   }
 }

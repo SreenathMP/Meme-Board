@@ -6,6 +6,14 @@
 }
 
 
+.toolbar {
+
+    display: flex;
+    justify-content: flex-end;
+    margin: 2rem 6rem 3rem 0rem;
+    
+}
+
 
 
 
@@ -13,17 +21,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-grow: 1;
+    
+   
 
 
 }
 
-.design-frame {
-	box-sizing: border-box;
+
+
+.design-frame1 {
+    box-sizing: border-box;
+    max-width: 500px;
+    max-height: 420px;
+
 }
 
-.design-frame {
-	max-width: 1000px;
-	max-height: 420px;
-	
+.design-frame2 {
+    box-sizing: border-box;
+    max-width: 500px;
+    max-height: 420px;
+
 }
