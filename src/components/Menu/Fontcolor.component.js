@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { TwitterPicker } from "react-color";
 import reactCSS from "reactcss";
 import SettingsContext from "../../contexts/settings.context";
-import { relative } from "path";
+
 
 class Fontcolor extends Component {
   state = {
