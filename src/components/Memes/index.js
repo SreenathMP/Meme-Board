@@ -32,6 +32,7 @@ class Memes extends Component {
      this.setState({borderradius: r})
     },
 
+
     setwidth1: w => {
       this.setState({ width1: w });
     },
@@ -64,10 +65,10 @@ class Memes extends Component {
 
     },
 
-    setsubheadingsize2: s =>{
+    setsubheadingsize2: s => {
 
       this.setState({
-        subheadingsize2: 2
+        subheadingsize2: s
       })
 
     },
@@ -93,7 +94,7 @@ class Memes extends Component {
     return (
       <div>
         <div className="root">
-          <div className="wrapper">
+          <div className="wrapper" >
             <SettingsContext.Provider value={this.state}>
               <Menu />
               <Canvas />

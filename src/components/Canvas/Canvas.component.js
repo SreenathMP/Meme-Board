@@ -5,25 +5,44 @@ import Heading from "./Heading.component";
 import SubHeading from "./SubHeading.component";
 import DraggableComponent from "./Draggable.component";
 import { Button } from "react-bootstrap";
+import { downloadImage } from '../../utils/download.util';
 
 
 
 
 class Canvas extends Component {
   state = {};
+constructor(props){
 
+super(props);
+this.frameset=React.createRef();
 
+}
+
+exportPic = async (width,height) => downloadImage(this.frameset.current, width, height, "jpeg");
+
+Combineframes = () =>{
+
+ 
+var combined = document.createElement("div");
+document.getElementById('container').appendChild(combined);
+const width=this.context.width1+this.context.width2;
+const height=this.context.height;
+this.exportPic(width,height);
+
+}
  
 
   render() {
     return (
       <div className="content">
         <div className="toolbar">
-          <Button variant="info" >Download Image</Button>
+          <Button className="downloadimage"  onClick={this.Combineframes}>Download Image</Button>
         </div>
-        <div className="center">
+        <div className="center" id="container" ref={this.frameset}>
           <div
             className="design-frame1"
+            id="frameset"
             style={{
               width: this.context.width1,
               height: this.context.height,
@@ -86,6 +105,7 @@ class Canvas extends Component {
           </div>
           <div
             className="design-frame2"
+            id="frameset"
             style={{
               width: this.context.width2,
               height: this.context.height,

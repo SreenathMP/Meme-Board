@@ -1,5 +1,6 @@
 import React from "react";
 import { Move } from "react-feather";
+import "./Draggable.styles.css";
 
 
 

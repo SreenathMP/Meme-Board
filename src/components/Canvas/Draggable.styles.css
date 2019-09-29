@@ -1,0 +1,20 @@
+.movable {
+	display: flex;
+}
+
+.movable .handle {
+	width: 25px;
+	height: 18px;
+	fill: white;
+	display: none;
+	top: -10px;
+}
+
+.movable:hover .handle {
+	display: block;
+	position: absolute;
+}
+
+.handle {
+	cursor: move;
+}

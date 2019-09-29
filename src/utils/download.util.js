@@ -1,6 +1,6 @@
 import domtoimage from 'dom-to-image';
 
-export const downloadImage = (node, width, height, type = 'png') => {
+export const downloadImage = (node, width, height, type) => {
 	const config = {
 		style: {
 			'transform-origin': 'center'
@@ -19,11 +19,10 @@ export const downloadImage = (node, width, height, type = 'png') => {
 		link.remove();
 	};
 
-	if (type === 'png') {
-		domtoimage.toPng(node, config).then(dataUrl => downloadFile(dataUrl, 'png'));
-	} else if (type === 'jpeg') {
+
+	 if (type === 'jpeg') {
 		domtoimage.toJpeg(node, config).then(dataUrl => downloadFile(dataUrl, 'jpeg'));
-	} else if (type === 'svg') {
-		domtoimage.toSvg(node, config).then(dataUrl => downloadFile(dataUrl, 'svg'));
-	}
+
+	 }
+
 };

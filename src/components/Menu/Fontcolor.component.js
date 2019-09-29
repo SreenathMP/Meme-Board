@@ -37,15 +37,16 @@ class Fontcolor extends Component {
 
     let node=e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.className
     
+    console.log(node)
     if( node === "menu1"){
       
       this.setState({ color: color.hex });
-      this.context.setfontcolor1(this.state.color);
+      this.context.setfontcolor1(color.hex);
       }
 
     if(node === "menu2"){
     this.setState({ color: color.hex });
-    this.context.setfontcolor2(parseInt(this.state.color));
+    this.context.setfontcolor2(color.hex);
     }
   };
 
