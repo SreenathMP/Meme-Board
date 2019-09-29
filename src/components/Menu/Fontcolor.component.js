@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { TwitterPicker } from "react-color";
 import reactCSS from "reactcss";
 import SettingsContext from "../../contexts/settings.context";
+import { relative } from "path";
 
 class Fontcolor extends Component {
   state = {
@@ -65,15 +66,17 @@ class Fontcolor extends Component {
           borderRadius: "1px",
           boxShadow: "0 0 0 1px rgba(0,0,0,.1)",
           display: "inline-block",
-          cursor: "pointer"
+          cursor: "pointer",
+          marginLeft:"120px"
         },
         popover: {
-          marginTop: "5px",
+          marginTop: "10px",
           zIndex: "1",
-          marginLeft: "-60px"
+          marginLeft: "-60px",
+          
         },
         cover: {
-          position: "fixed",
+          position: "relative",
           top: "0px",
           right: "0px",
           bottom: "0px",
@@ -81,7 +84,11 @@ class Fontcolor extends Component {
         },
         picker: {
           margin: "15px 4px"
-        }
+        },
+        twitterpicker: {
+          position: "relative",
+          left: "8px"
+      }
       }
     });
 
@@ -93,7 +100,7 @@ class Fontcolor extends Component {
         {this.state.displayColorPicker ? (
           <div style={styles.popover}>
             <div style={styles.cover} onClick={this.handleClose} />
-            <TwitterPicker
+            <TwitterPicker style={styles.twitterpicker}
               color={this.state.color}
               onChange={this.handleChange}
             />

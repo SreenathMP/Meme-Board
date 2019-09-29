@@ -60,7 +60,6 @@ class Colorpicker extends Component {
           height: "14px",
           borderRadius: "2px",
           background: `${this.state.color}`
-         
         },
         swatch: {
           padding: "5px",
@@ -69,15 +68,16 @@ class Colorpicker extends Component {
           boxShadow: "0 0 0 1px rgba(0,0,0,.1)",
           display: "inline-block",
           cursor: "pointer",
-          
+          marginLeft:"90px"
         },
         popover: {
-          marginTop: "5px",
+          marginTop: "10px",
           zIndex: "1",
-          marginLeft: "-120px"
+          marginLeft: "-120px",
+          
         },
         cover: {
-          position: "fixed",
+          position: "relative",
           top: "0px",
           right: "0px",
           bottom: "0px",
@@ -85,10 +85,11 @@ class Colorpicker extends Component {
         },
         picker: {
           margin: "15px 4px"
-
         },
-       
-
+        twitterpicker: {
+          position: "relative",
+          left: "8px"
+      }
       }
     });
 
@@ -100,7 +101,7 @@ class Colorpicker extends Component {
         {this.state.displayColorPicker ? (
           <div style={styles.popover}>
             <div style={styles.cover} onClick={this.handleClose} />
-            <TwitterPicker 
+            <TwitterPicker style={styles.twitterpicker}
               color={this.state.color}
               onChange={this.handleChange}
             />
