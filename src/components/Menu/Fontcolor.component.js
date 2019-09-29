@@ -38,7 +38,7 @@ class Fontcolor extends Component {
 
     let node=e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.className
     
-    console.log(node)
+    
     if( node === "menu1"){
       
       this.setState({ color: color.hex });

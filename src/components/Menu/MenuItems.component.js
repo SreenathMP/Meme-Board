@@ -20,7 +20,6 @@ class MenuItems1 extends Component {
   componentDidMount() {
     
     this.width.current.value = this.context.width1;
-    console.log(this.context.headingsize1);
     this.headingsize.current.value=this.context.headingsize1;
     this.subsize.current.value=this.context.subheadingsize1;
     
