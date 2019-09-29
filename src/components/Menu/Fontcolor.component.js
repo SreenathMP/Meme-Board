@@ -68,8 +68,9 @@ class Fontcolor extends Component {
           cursor: "pointer"
         },
         popover: {
-          position: "absolute",
-          zIndex: "2"
+          marginTop: "5px",
+          zIndex: "1",
+          marginLeft: "-60px"
         },
         cover: {
           position: "fixed",

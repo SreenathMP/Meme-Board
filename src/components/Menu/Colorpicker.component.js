@@ -3,6 +3,8 @@ import { TwitterPicker } from "react-color";
 import reactCSS from "reactcss";
 import SettingsContext from "../../contexts/settings.context";
 
+
+
 class Colorpicker extends Component {
   state = {
     displayColorPicker: false,
@@ -58,6 +60,7 @@ class Colorpicker extends Component {
           height: "14px",
           borderRadius: "2px",
           background: `${this.state.color}`
+         
         },
         swatch: {
           padding: "5px",
@@ -65,11 +68,13 @@ class Colorpicker extends Component {
           borderRadius: "1px",
           boxShadow: "0 0 0 1px rgba(0,0,0,.1)",
           display: "inline-block",
-          cursor: "pointer"
+          cursor: "pointer",
+          
         },
         popover: {
-          position: "absolute",
-          zIndex: "2"
+          marginTop: "5px",
+          zIndex: "1",
+          marginLeft: "-120px"
         },
         cover: {
           position: "fixed",
@@ -80,7 +85,10 @@ class Colorpicker extends Component {
         },
         picker: {
           margin: "15px 4px"
-        }
+
+        },
+       
+
       }
     });
 
@@ -92,7 +100,7 @@ class Colorpicker extends Component {
         {this.state.displayColorPicker ? (
           <div style={styles.popover}>
             <div style={styles.cover} onClick={this.handleClose} />
-            <TwitterPicker
+            <TwitterPicker 
               color={this.state.color}
               onChange={this.handleChange}
             />
